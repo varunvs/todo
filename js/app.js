@@ -1,8 +1,26 @@
-;(function () {
+var ToDo = (function () {
 	var ToDo = {
-		boot: function () {
+		init: function () {
+			var mainView = new ToDo.Views.MainView();
 
-		}
+			mainView.init();
+
+			this.mainView = mainView;
+			return this;
+		},
+
+		display: function () {
+			var contentEl = document.querySelector(".content");
+
+			contentEl.appendChild(this.mainView.getEl());
+
+			return this;
+		},
+
+		Views:   {},
+		Util:   {  },
+		Models:{    }
 	};
 
-}())
+	return ToDo;
+}());
