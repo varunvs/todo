@@ -19,7 +19,8 @@ var ToDo = (function () {
 
 		Views:   {},
 		Util:   {  },
-		Models:{    }
+		Models:{    },
+		Data: {      }
 	};
 
 	return ToDo;

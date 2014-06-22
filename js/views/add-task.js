@@ -36,11 +36,32 @@
 	AddTaskView.prototype.render = function () {
 		this.el = ToDo.Util.parseToHTML(this.template);
 
+		this.el.querySelector("#description").value = this.model.getValues().description;
 		return this;
 	};
 
 	AddTaskView.prototype.attachEvents = function () {
+		var self = this;
+
 		this.el.querySelector(".save").addEventListener("click", this.save.bind(this), true);
+		this.el.querySelector(".cancel").addEventListener("click", this.cancel.bind(this), true);
+
+		this.keyHandler = this.keyHandler.bind(this);
+		window.addEventListener("keydown", this.keyHandler);
+	};
+
+	AddTaskView.prototype.keyHandler = function (e) {
+		if (e.keyCode === 27) {
+			e.preventDefault();
+			e.stopPropagation();
+			this.cancel();
+		}
+
+		if (e.ctrlKey === true && e.keyCode === 13) {
+			e.preventDefault();
+			this.save();
+		}
+
 	};
 
 	AddTaskView.prototype.save = function () {
@@ -50,8 +71,14 @@
 		
 		this.model.setValues(values);
 
+		window.removeEventListener("keydown", this.keyHandler);
 		this.dialog.dispose();
 		this.config.callback(this.model);
+	};
+
+	AddTaskView.prototype.cancel = function () {
+		window.removeEventListener("keydown", this.keyHandler);
+		this.dialog.dispose();
 	};
 
 	AddTaskView.prototype.show = function () {
@@ -61,6 +88,7 @@
 		dialog.show();
 
 		this.dialog = dialog;
+		this.el.querySelector("#description").focus();
 	};
 
 	AddTaskView.prototype.getEl = function () {

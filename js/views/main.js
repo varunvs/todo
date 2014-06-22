@@ -8,8 +8,8 @@
 					"<h1>ToDo</h1>" +
 					"<button class='add-btn btn blue'>Add Task</button>" +
 				"</div>" +
-				"<div class='todo-list'>" +
-				"</div>" +
+				"<ul class='todo-list'>" +
+				"</ul>" +
 			"</div>" +
 		"</div>";
 
@@ -28,12 +28,22 @@
 
 	MainView.prototype.render = function () {
 		this.el = ToDo.Util.parseToHTML(this.template);
-
+		this.listEl = this.el.querySelector("ul");
 		return this;
 	};
 
 	MainView.prototype.attachEvents = function () {
+		var self = this;
+
 		this.el.querySelector(".add-btn").addEventListener("click", this.addTask.bind(this), true);
+
+		window.addEventListener("keydown", function (e) {
+			if (e.keyCode === 65 && e.ctrlKey) {
+				e.preventDefault();
+				self.addTask();
+				e.stopPropagation();
+			}
+		});
 	};
 
 	MainView.prototype.addTask = function () {
@@ -46,11 +56,14 @@
 
 	MainView.prototype.onAddTask = function (model) {
 		var self = this,
-			taskItem = new ToDo.Views.TaskItemView({ model: model, parentView: self });
+			taskItem = new ToDo.Views.TaskItemView({ model: model, parentView: self }),
+			listEl = this.el.querySelector(".todo-list");
 
 		taskItem.init();
 
-		this.el.querySelector(".todo-list").appendChild(taskItem.getEl());
+		listEl.insertBefore(taskItem.getEl(), listEl.firstChild);
+
+		return taskItem;
 	};
 
 	MainView.prototype.getEl = function () {

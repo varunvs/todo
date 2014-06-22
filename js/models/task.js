@@ -41,5 +41,9 @@
 		return this;
 	};
 
+	TaskModel.prototype.getValues = function () {
+		return this.model;
+	};
+
 	ToDo.Models.TaskModel = TaskModel;
 }(ToDo));

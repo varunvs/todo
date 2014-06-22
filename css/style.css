@@ -15,6 +15,12 @@ body > main > .content {
 	margin: 0 auto;
 }
 
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
 .clearfix::after {
    content: " ";
    visibility: hidden;
@@ -108,6 +114,11 @@ body > main > .content {
 	font-weight: bold;
 }
 
+.todo .todo-list {
+	max-height: 335px;
+	overflow-y: auto;
+}
+
 .todo .btn.add-btn {
 	float: right;
 }
@@ -174,6 +185,7 @@ body > main > .content {
 	padding-right: 10px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	padding-top: 5px;
 }
 
 .task-item .actions {
@@ -181,7 +193,8 @@ body > main > .content {
 	visibility: hidden;
 }
 
-.task-item:hover .actions {
+.task-item:hover .actions,
+.task-item:focus .actions {
 	visibility: visible;
 }
 
@@ -192,6 +205,8 @@ body > main > .content {
 	outline: none;
 	box-shadow: none;
 	opacity: 0.6;
+	height: 24px;
+	margin-left: 5px;
 }
 
 .task-item .edit-btn:hover,
@@ -204,4 +219,20 @@ body > main > .content {
 .task-item .delete-btn img {
 	height: 24px;
 	width: 24px;
+	padding: 0;
+	margin: 0;
+}
+
+.task-item .marker {
+	margin-right: 10px;
+}
+
+.task-item.complete {
+	background-color: #F7F7F7
+}
+
+.task-item.complete .task-content {
+	opacity: 0.5;
+	font-style: italic;
+	text-decoration: line-through;
 }
