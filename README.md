@@ -1,7 +1,7 @@
 todo
 ====
 
-A simple todo app. It lives and dies with in browser. Do not expect it to 'permanently' store values.
+A simple todo app. It lives and dies with in browser. Do not expect it to 'permanently' store values. There is no server interaction in the first place.
 
 ### Features
 * Task add/edit/delete functionality
