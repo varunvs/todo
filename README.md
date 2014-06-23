@@ -8,10 +8,9 @@ A simple todo app. It lives and dies with in browser. Do not expect it to 'perma
 * Alignment of tasks by the use of drag and drop
 * Keyboard shortcuts and navigation
 * Basic unit testing
-* As every view/model is an instance of its 'class' functions, this allows extending the app with then notion of multiple task lists.
 
 ### Keyboard shortcuts and navigation
-The basic keys assigned are Ctrl+a (Task add), e (if a task is having focus, press e to edit), d (delete a task). Use tab / shift+tab to navigate within the tasks
+The basic keys assigned are Ctrl+a (Task add), e (if a task is having focus, press e to edit), d (delete a task). Use tab / shift+tab to navigate within the tasks. Use escape to close dialogs and ctrl+enter to invoke default behaviour of a dialog. In case of task add dialog, ctrl+enter invokes save action.
 
 ### Unit Testing
 Unit testing of basic functionalities such as add/edit/delete is available. Navigate to test directory under the repository or head to http://varunvs.github.io/todo/test for real time action
