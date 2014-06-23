@@ -7,6 +7,7 @@
 body {
 	background-color: #F0F0F0;
 	font-family: Arial;
+	font-size: 14px;
 	margin: 0;
 }
 
@@ -33,7 +34,7 @@ ul, li {
 	border-style: solid;
     border-width: 0px 0px 3px;
     box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
-    color: #FFFFFF;	   
+    color: #fff;	   
     border-radius: 6px;
     cursor: pointer;
     display: inline-block;
@@ -42,7 +43,6 @@ ul, li {
     text-align: center;
     text-decoration: none;
     text-overflow: ellipsis;
-    transition: all 200ms ease-in-out 0s;
     white-space: nowrap;	
     padding: 8px 15px;
     font-size: 14px;
@@ -50,25 +50,25 @@ ul, li {
 
 .btn.blue {
 
-    border-color: #326E99;
-    background-color: #3F8ABF;
+    border-color: #326e99;
+    background-color: #3f8abf;
 }
 
 .btn.blue:hover,
 .btn.blue:focus,
 .btn.blue:active {
-    background-color: #397CAC;
-    border-color: #326E99;   
+    background-color: #397cac;
+    border-color: #326e99;   
 }
 
 .btn.red {
-    background-color: #ED5A5A !important;
-    border-color: #EA4343 !important;
+    background-color: #ed5a5a;
+    border-color: #ea4343;
 
 }
 .btn.red:hover, .btn.red:focus, .btn.red:active {
-    background: none repeat scroll 0 0 #EB4848 !important;
-    border-color: #E83131 !important;    
+    background: none repeat scroll 0 0 #eb4848;
+    border-color: #e83131;    
 }
 
 .floatl {
@@ -108,7 +108,7 @@ ul, li {
 }
 
 .todo .header {
-	background-color: #00635B;
+	background-color: #00635b;
 	color: #fff;
 	padding: 10px;
 	font-weight: bold;
@@ -133,7 +133,7 @@ ul, li {
 }
 
 .dialog .header {
-	background-color: #00635B;
+	background-color: #00635b;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	margin-bottom: 10px
@@ -177,7 +177,7 @@ ul, li {
 .task-item {
 	padding: 10px;
 	border-bottom: solid 1px #ccc;
-	background-color: #F8ECEC;
+	background-color: #f8ecec;
 }
 
 .task-item .task-content {
@@ -228,7 +228,7 @@ ul, li {
 }
 
 .task-item.complete {
-	background-color: #F7F7F7
+	background-color: #f7f7f7;
 }
 
 .task-item.complete .task-content {

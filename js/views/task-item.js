@@ -39,8 +39,8 @@
 
 		taskDescEl = this.el.querySelector("[data-id='task-desc']");
 
-		taskDescEl.textContent = this.model.model.description;
-		taskDescEl.title = this.model.model.description;
+		taskDescEl.textContent = this.model.getValues().description;
+		taskDescEl.title = this.model.getValues().description;
 
 		return this;
 	};
