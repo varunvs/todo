@@ -38,7 +38,7 @@
 	AddTaskView.prototype.render = function () {
 		this.el = ToDo.Util.parseToHTML(this.template);
 
-		this.el.querySelector("#description").value = this.model.getValues().description;
+		this.el.querySelector("#description").value = this.model.getValues().description || "";
 
 		return this;
 	};
