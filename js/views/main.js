@@ -17,6 +17,8 @@
 	var MainView = function (config) {
 		this.config = config || {};
 		this.template = template;
+
+		ToDo.Data.isAddEnabled = true;
 	};
 
 	MainView.prototype.init = function () {
@@ -38,7 +40,7 @@
 		this.el.querySelector(".add-btn").addEventListener("click", this.addTask.bind(this), true);
 
 		window.addEventListener("keydown", function (e) {
-			if (e.keyCode === 65 && e.ctrlKey) {
+			if (e.keyCode === 65 && e.ctrlKey && ToDo.Data.isAddEnabled) {
 				e.preventDefault();
 				self.addTask();
 				e.stopPropagation();
@@ -50,15 +52,23 @@
 		var self = this,
 			addTaskView = new ToDo.Views.AddTaskView( { callback: self.onAddTask.bind(self) });
 
+		ToDo.Data.isAddEnabled = false;
 		addTaskView.init();
 		addTaskView.show();
 	};
 
 	MainView.prototype.onAddTask = function (model) {
 		var self = this,
-			taskItem = new ToDo.Views.TaskItemView({ model: model, parentView: self }),
+			taskItem,
 			listEl = this.el.querySelector(".todo-list");
 
+		ToDo.Data.isAddEnabled = true;
+		if (!model) {
+			// If no model means, user cancelled the add view
+			return;
+		}
+
+		taskItem = new ToDo.Views.TaskItemView({ model: model, parentView: self });
 		taskItem.init();
 
 		listEl.insertBefore(taskItem.getEl(), listEl.firstChild);

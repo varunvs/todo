@@ -1,4 +1,4 @@
-;(function (ToDo) {
+(function (ToDo) {
 	"use strict";
 
 	ToDo.Util.parseToHTML = function (str) {

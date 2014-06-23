@@ -1,4 +1,6 @@
 var ToDo = (function () {
+	"use strict";
+	
 	var ToDo = {
 		init: function () {
 			var mainView = new ToDo.Views.MainView();

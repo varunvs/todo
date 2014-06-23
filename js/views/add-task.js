@@ -24,6 +24,8 @@
 		this.template = template;
 		this.config = config;
 		this.model = config.model || new ToDo.Models.TaskModel();
+
+		this.isEditing = config.model ? true : false;
 	};
 
 	AddTaskView.prototype.init = function () {
@@ -37,6 +39,7 @@
 		this.el = ToDo.Util.parseToHTML(this.template);
 
 		this.el.querySelector("#description").value = this.model.getValues().description;
+
 		return this;
 	};
 
@@ -79,10 +82,17 @@
 	AddTaskView.prototype.cancel = function () {
 		window.removeEventListener("keydown", this.keyHandler);
 		this.dialog.dispose();
+		this.config.callback(false);
 	};
 
 	AddTaskView.prototype.show = function () {
-		var dialog = new ToDo.Views.DialogView({ content: this.el, title: "Add Task" });
+		var self = this,
+			dialog;
+
+		dialog = new ToDo.Views.DialogView({
+			content: this.el,
+			title: self.isEditing ? "Edit Task" : "Add Task"
+		});
 
 		dialog.init();
 		dialog.show();

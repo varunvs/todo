@@ -125,12 +125,15 @@
 		var self = this,
 			editTaskView = new ToDo.Views.AddTaskView( { callback: self.afterEditTask.bind(self), model: self.model });
 
+		ToDo.Data.isAddEnabled = false;
+
 		editTaskView.init();
 		editTaskView.show();
 	};
 
 	TaskItemView.prototype.afterEditTask = function (model) {
 		this.el.querySelector("[data-id='task-desc']").textContent = this.model.getValues().description;
+		ToDo.Data.isAddEnabled = false;
 	}
 
 	TaskItemView.prototype.deleteTask = function (e) {
