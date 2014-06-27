@@ -23,52 +23,51 @@ ul, li {
 }
 
 .clearfix::after {
-   content: " ";
-   visibility: hidden;
-   display: block;
-   height: 0;
-   clear: both;
+	content: " ";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
 }
 
 .btn {
 	border-style: solid;
-    border-width: 0px 0px 3px;
-    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
-    color: #fff;	   
-    border-radius: 6px;
-    cursor: pointer;
-    display: inline-block;
-    font-style: normal;
-    overflow: hidden;
-    text-align: center;
-    text-decoration: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;	
-    padding: 8px 15px;
-    font-size: 14px;
+	border-width: 0px 0px 3px;
+	box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+	color: #fff;	   
+	border-radius: 6px;
+	cursor: pointer;
+	display: inline-block;
+	font-style: normal;
+	overflow: hidden;
+	text-align: center;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	white-space: nowrap;	
+	padding: 8px 15px;
+	font-size: 14px;
 }
 
 .btn.blue {
-
-    border-color: #326e99;
-    background-color: #3f8abf;
+	border-color: #326e99;
+	background-color: #3f8abf;
 }
 
 .btn.blue:hover,
 .btn.blue:focus,
 .btn.blue:active {
-    background-color: #397cac;
-    border-color: #326e99;   
+	background-color: #397cac;
+	border-color: #326e99;   
 }
 
 .btn.red {
-    background-color: #ed5a5a;
-    border-color: #ea4343;
+	background-color: #ed5a5a;
+	border-color: #ea4343;
 
 }
 .btn.red:hover, .btn.red:focus, .btn.red:active {
-    background: none repeat scroll 0 0 #eb4848;
-    border-color: #e83131;    
+	background: none repeat scroll 0 0 #eb4848;
+	border-color: #e83131;    
 }
 
 .floatl {
