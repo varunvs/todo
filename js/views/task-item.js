@@ -80,9 +80,9 @@
 		}.bind(this));
 
 		this.el.addEventListener("dragstart", this.onStartDrag.bind(this), true);
-        this.el.addEventListener("dragend", this.onEndDrag.bind(this), true);
-        this.el.addEventListener("drop", this.onDragDrop.bind(this), true);
-        this.el.addEventListener("dragover", this.onDragOver.bind(this), true);
+	        this.el.addEventListener("dragend", this.onEndDrag.bind(this), true);
+	        this.el.addEventListener("drop", this.onDragDrop.bind(this), true);
+	        this.el.addEventListener("dragover", this.onDragOver.bind(this), true);
 	};
 
 	TaskItemView.prototype.onStartDrag = function (e) {
