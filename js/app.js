@@ -19,10 +19,10 @@ var ToDo = (function () {
 			return this;
 		},
 
-		Views:   {},
-		Util:   {  },
-		Models:{    },
-		Data: {      }
+		Views: {},
+		Util: {},
+		Models: {},
+		Data: {}
 	};
 
 	return ToDo;
